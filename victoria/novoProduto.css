@@ -1,0 +1,108 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #f5f5f5;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+    color:  #000000;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+    outline: none;
+    border-color: #5b9bd5;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+button.voltar {
+    background-color: #cc1818;
+}
+
+button.voltar:hover {
+    background-color: #cb4343;
+}
+
+button[type="submit"] {
+    background-color:  rgb(173, 64, 166);
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color:#e8b1e4;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    width: 100%;
+    margin-top: auto;
+    padding: 15px 0;
+    background-color: #f0f0f0;
+}
+
+footer a {
+    color: rgb(173, 64, 166);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

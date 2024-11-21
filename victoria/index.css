@@ -1,0 +1,94 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tudo {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #aa0c80;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    color:  #522e48;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgb(173, 64, 166);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #e8b1e4;
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    color: rgb(173, 64, 166);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
