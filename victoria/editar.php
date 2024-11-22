@@ -1,23 +1,14 @@
 <?php
-// Inicia a sessão para acessar os dados armazenados
 session_start();
-
-// Verifica se o parâmetro 'id' foi passado
 if (!isset($_GET['id'])) {
     echo "Produto não encontrado.";
     exit;
 }
-
-// Recupera o ID do produto a ser editado
 $idProduto = $_GET['id'];
-
-// Verifica se o produto existe
 if (!isset($_SESSION['produtos'][$idProduto])) {
     echo "Produto não encontrado.";
     exit;
 }
-
-// Recupera os dados do produto
 $produto = $_SESSION['produtos'][$idProduto];
 
 ?>
@@ -34,8 +25,8 @@ $produto = $_SESSION['produtos'][$idProduto];
     <h1>Editar Produto</h1>
     
     <form action="catalogo.php" method="POST">
-        <input type="hidden" name="editar" value="1"> <!-- Flag para edição -->
-        <input type="hidden" name="idProduto" value="<?php echo $idProduto; ?>"> <!-- ID do produto -->
+        <input type="hidden" name="editar" value="1"> 
+        <input type="hidden" name="idProduto" value="<?php echo $idProduto; ?>"> 
         
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>" required>
