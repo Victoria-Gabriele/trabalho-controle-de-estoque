@@ -1,24 +1,24 @@
 <?php
-// Inicia a sessão para acessar os dados armazenados
+
 session_start();
 
-// Verifica se um produto foi excluído
+
 if (isset($_GET['excluir'])) {
-    $idExcluir = $_GET['excluir']; // Recebe o índice do produto a ser excluído
-    unset($_SESSION['produtos'][$idExcluir]); // Remove o produto da sessão
-    $_SESSION['produtos'] = array_values($_SESSION['produtos']); // Reindexa os produtos
-    header('Location: catalogo.php'); // Redireciona para evitar reenvio do formulário
+    $idExcluir = $_GET['excluir']; 
+    unset($_SESSION['produtos'][$idExcluir]); 
+    $_SESSION['produtos'] = array_values($_SESSION['produtos']); 
+    header('Location: catalogo.php'); 
     exit;
 }
 
-// Verifica se os dados de edição foram enviados
+
 if (isset($_POST['editar'])) {
-    $idProduto = $_POST['idProduto']; // ID do produto a ser editado
+    $idProduto = $_POST['idProduto']; 
     $_SESSION['produtos'][$idProduto]['nome'] = $_POST['nome'];
     $_SESSION['produtos'][$idProduto]['descricao'] = $_POST['descricao'];
     $_SESSION['produtos'][$idProduto]['preco'] = $_POST['preco'];
     $_SESSION['produtos'][$idProduto]['quantidade'] = $_POST['quantidade'];
-    header('Location: catalogo.php'); // Redireciona para evitar reenvio do formulário
+    header('Location: catalogo.php'); 
     exit;
 }
 ?>
@@ -34,7 +34,7 @@ if (isset($_POST['editar'])) {
 <body>
     <h1>Catálogo de Produtos</h1>
 
-    <!-- Verifica se há produtos na sessão -->
+    
     <?php if (isset($_SESSION['produtos']) && count($_SESSION['produtos']) > 0): ?>
         <table border="1">
             <thead>
@@ -54,9 +54,9 @@ if (isset($_POST['editar'])) {
                         <td>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></td>
                         <td><?php echo htmlspecialchars($produto['quantidade']); ?></td>
                         <td>
-                            <!-- Link para excluir o produto -->
+                          
                             <a href="catalogo.php?excluir=<?php echo $id; ?>" onclick="return confirm('Tem certeza de que deseja excluir este produto?');">Excluir</a> | 
-                            <!-- Link para editar o produto -->
+                           
                             <a href="editar.php?id=<?php echo $id; ?>">Editar</a>
                         </td>
                     </tr>
